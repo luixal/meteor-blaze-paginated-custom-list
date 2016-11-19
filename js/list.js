@@ -1,6 +1,6 @@
 /*
 `options`: {
-  `template`: template used for rendering list items
+  `template`: template used for rendering paginatedCustomList items
   `collection`: collection used,
   `ulClasses`: classes applied to `ul`,
   `liClasses`: classes applied to `li`,
@@ -23,7 +23,7 @@
 */
 var options;
 
-Template.list.onCreated(function() {
+Template.paginatedCustomList.onCreated(function() {
   options = this.data.options;
   // creating pagination object:
   if (options.collection) {
@@ -34,7 +34,7 @@ Template.list.onCreated(function() {
   }
 });
 
-Template.list.helpers({
+Template.paginatedCustomList.helpers({
 
   'template': function() {
     return options.template;

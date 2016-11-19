@@ -1,8 +1,8 @@
-<template name="list">
+<template name="paginatedCustomList">
   {{#with options}}
-    <ul class="luixal-list {{ulClasses}}">
+    <ul class="paginated-custom-list {{ulClasses}}">
     {{#each items}}
-      {{> listItem template=template onItemClick=onItemClick liClasses=liClasses item=this}}
+      {{> paginatedCustomListItem template=template onItemClick=onItemClick liClasses=liClasses item=this}}
     {{/each}}
     </ul>
     {{#with paginatorOptions}}
