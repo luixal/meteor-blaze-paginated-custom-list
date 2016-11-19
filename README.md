@@ -15,9 +15,9 @@ Like any other meteor package, you can install using:
 As learning by example is great, let's say we want to show a list with the docs in my (already defined) `Books` collection.
 
 First, we need to publish the pagination for the `Books` collection so, in the server, where I'm publishing this collection, we need to add this line:
-
-    new Meteor.Pagination(Books);
-
+```javascript
+new Meteor.Pagination(Books);
+```
 This is all that is needed in the `server` side. Following steps will all be done in `client` files :)
 
 Next thing we need to do (now or later) is building a template for each element of the list. This could be one simple example (i'm using bootstrap classes here):
