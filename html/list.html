@@ -1,0 +1,14 @@
+<template name="list">
+  {{#with options}}
+    <ul class="luixal-list {{ulClasses}}">
+    {{#each items}}
+      {{> listItem template=template onItemClick=onItemClick liClasses=liClasses item=this}}
+    {{/each}}
+    </ul>
+    {{#with paginatorOptions}}
+      {{#unless hide}}
+        {{> defaultBootstrapPaginator pagination=templatePagination limit=limit containerClass=containerClass onClick=onClick}}
+      {{/unless}}
+    {{/with}}
+ {{/with}}
+</template>

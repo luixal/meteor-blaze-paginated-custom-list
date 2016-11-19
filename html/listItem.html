@@ -1,0 +1,7 @@
+<template name="listItem">
+  <li class="luixal-list-item {{liClasses}}">
+    {{#if template}}
+      {{> Template.dynamic template=template data=item}}
+    {{/if}}
+  </li>
+</template>
