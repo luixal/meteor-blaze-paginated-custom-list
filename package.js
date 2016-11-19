@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.1');
-  api.use(['ecmascript', 'kurounin:pagination', 'kurounin:pagination-blaze']);
+  api.use(['ecmascript@0.6.1', 'kurounin:pagination@1.0.13', 'kurounin:pagination-blaze@1.0.2']);
   api.use(['templating'], 'client');
   // html files:
   api.addFiles(['html/list.html', 'html/listItem.html'], 'client');
