@@ -200,5 +200,5 @@ Uses bootswatch's theme [Simplex](http://bootswatch.com/simplex/).
 #### Example 4
 Uses bootswatch's theme [Sandstone](http://bootswatch.com/sandstone/).
 
-![example_4_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_4.png)
-![example_4_1_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_4_1.png)
+<img src="https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_4.png" width="400">
+<img src="https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_4_1.png" width="400">
