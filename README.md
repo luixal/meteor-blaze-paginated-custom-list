@@ -142,6 +142,40 @@ A complete example would be something like this:
 }
 ```
 
+## Public Methods
+The methods published by [`kurounin:pagination`](https://github.com/Kurounin/Pagination/) package are accesible through the `PaginatedCustomList` object `getPagination` method. These methods allow you to programatically control pagination (items showed per page, current page, total items, total pages, etc...).
+
+You just need to provide the collection name you want to get the pagination object for. Following with the books example, you can get the pagination object this way:
+
+```javascript
+PaginatedCustomList.getPagination('books');
+```
+
+Methods present in this object are the one from the [`kurounin:pagination`](https://github.com/Kurounin/Pagination/) package, which are these ones:
+
+- `currentPage([int])`: get/set the current page
+- `perPage([int])`: get/set the number of documents per page
+- `filters([Object])`: get/set the current filters
+- `fields([Object])`: get/set the retrieved fields
+- `sort([Object])`: get/set the sorting order
+- `debug([boolean])`: get/set the debug
+- `totalItems()`: get the total number of documents
+- `totalPages()`: get the total number of pages
+- `ready()`: checks if the subscription for the current page is ready
+- `getPage()`: returns the documents for the current page
+
+You just need to call them on the pagination object you got before, like in this examples:
+
+```javascript
+PaginatedCustomList.getPagination('books').currentPage();
+PaginatedCustomList.getPagination('books').currentPage(3);
+PaginatedCustomList.getPagination('books').perPage();
+PaginatedCustomList.getPagination('books').perPage(6);
+PaginatedCustomList.getPagination('books').totalItems();
+PaginatedCustomList.getPagination('books').totalPages();
+```
+Example 4 contains a fully functional example using this methods.
+
 ## Examples
 
 These examples use differente bootstrap themes from [bootswatch](http://bootswatch.com/). You can find them already packaged for Meteor in [Atmosphere](https://atmospherejs.com/).
@@ -162,3 +196,9 @@ Uses bootswatch's theme [Superhero](http://bootswatch.com/superhero/)
 Uses bootswatch's theme [Simplex](http://bootswatch.com/simplex/).
 
 ![example_3_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_3.png)
+
+#### Example 4
+Uses bootswatch's theme [Sandstone](http://bootswatch.com/sandstone/).
+
+![example_4_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_4.png)
+![example_4_1_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_4_1.png)
