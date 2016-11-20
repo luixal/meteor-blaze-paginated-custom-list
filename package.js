@@ -1,6 +1,6 @@
 Package.describe({
   name: 'luixal:blaze-paginated-custom-list',
-  version: '0.0.5',
+  version: '0.0.7',
   // Brief, one-line summary of the package.
   summary: 'Paginated Custom List for Meteor and Blaze',
   // URL to the Git repository containing the source code for this package.
@@ -12,12 +12,14 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.1');
-  api.use(['ecmascript@0.6.1', 'kurounin:pagination@1.0.13', 'kurounin:pagination-blaze@1.0.2']);
+  api.use(['ecmascript@0.6.1', 'kurounin:pagination@1.0.13', 'kurounin:pagination-blaze@1.0.2', 'reactive-var']);
   api.use(['templating'], 'client');
   // html files:
   api.addFiles(['html/list.html', 'html/listItem.html'], 'client');
   // css files:
   api.addFiles('css/list.css', 'client');
   // js files:
-  api.addFiles(['js/list.js', 'js/listItem.js'], 'client');
+  api.addFiles(['js/namespace.js', 'js/list.js', 'js/listItem.js'], 'client');
+  // exporting pagination object:
+  api.export('PaginatedCustomList', 'client');
 });

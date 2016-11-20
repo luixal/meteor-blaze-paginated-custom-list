@@ -27,10 +27,15 @@ Template.paginatedCustomList.onCreated(function() {
   options = this.data.options;
   // creating pagination object:
   if (options.collection) {
-    this.pagination = new Meteor.Pagination(
-      options.collection,
-      options.paginationOptions
-    )
+    let vb = Paginations.get();
+    vb[options.collection._name] = new ReactiveVar();
+    vb[options.collection._name].set(
+      new Meteor.Pagination(
+        options.collection,
+        options.paginationOptions
+      )
+    );
+    Paginations.set(vb);
   }
 });
 
@@ -49,11 +54,11 @@ Template.paginatedCustomList.helpers({
   },
 
   'templatePagination': function() {
-    return Template.instance().pagination;
+    return PaginatedCustomList.getPagination(options.collection._name);
   },
 
   'items': function() {
-    if (Template.instance().pagination) return Template.instance().pagination.getPage()
+    if (PaginatedCustomList.getPagination(options.collection._name)) return PaginatedCustomList.getPagination(options.collection._name).getPage()
   }
 
 });
