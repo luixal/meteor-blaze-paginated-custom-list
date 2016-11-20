@@ -61,4 +61,13 @@ we also need to define a helper for providing that `options` value. This could b
 }
 ```
 
-And that's it, our paginated list shoud be showing up like.
+And that's it, our paginated list shoud be showing up like these ones (according to the bootstrap theme and your custom template:
+
+#### Example 1
+![example_1_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_1.png)
+
+#### Example 2
+![example_2_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_2.png)
+
+#### Example 3
+![example_3_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_3.png)
