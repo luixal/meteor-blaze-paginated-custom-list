@@ -71,3 +71,7 @@ And that's it, our paginated list shoud be showing up like these ones (according
 
 #### Example 3
 ![example_3_screenshot](https://github.com/luixal/meteor-blaze-paginated-custom-list-example/raw/master/screenshots/example_3.png)
+
+
+## Examples Project
+You can find the code for this examples [here](https://github.com/luixal/meteor-blaze-paginated-custom-list-example)
