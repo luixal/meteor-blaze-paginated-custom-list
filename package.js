@@ -19,7 +19,7 @@ Package.onUse(function(api) {
   // css files:
   api.addFiles('css/list.css', 'client');
   // js files:
-  api.addFiles(['js/namespace.js', 'js/list.js', 'js/listItem.js'], 'client');
+  api.addFiles(['js/list.js', 'js/listItem.js'], 'client');
   // exporting pagination object:
   api.export('PaginatedCustomList', 'client');
 });

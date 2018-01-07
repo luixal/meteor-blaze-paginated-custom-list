@@ -21,44 +21,40 @@
   }
 }
 */
-var options;
 
 Template.paginatedCustomList.onCreated(function() {
-  options = this.data.options;
-  // creating pagination object:
-  if (options.collection) {
-    let vb = Paginations.get();
-    vb[options.collection._name] = new ReactiveVar();
-    vb[options.collection._name].set(
-      new Meteor.Pagination(
-        options.collection,
-        options.paginationOptions
-      )
-    );
-    Paginations.set(vb);
-  }
+  // saving options to local reactive var:
+  this.options = new ReactiveVar(this.data.options);
+  // creating pagination as local reactive var:
+  this.pagination = new ReactiveVar(
+    new Meteor.Pagination(
+    this.data.options.collection,
+    this.data.options.paginationOptions
+    )
+  );
 });
 
 Template.paginatedCustomList.helpers({
 
   'template': function() {
-    return options.template;
+    return Template.instance().options.get().template;
   },
 
   'onItemClick': function() {
-    return options.onItemClick;
+    return Template.instance().options.get().onItemClick;
   },
 
   'liClasses': function() {
-    return options.liClasses;
+    return Template.instance().options.get().liClasses;
   },
 
   'templatePagination': function() {
-    return PaginatedCustomList.getPagination(options.collection._name);
+    return Template.instance().pagination.get();
   },
 
   'items': function() {
-    if (PaginatedCustomList.getPagination(options.collection._name)) return PaginatedCustomList.getPagination(options.collection._name).getPage()
+    let pagination = Template.instance().pagination.get();
+    if (pagination) return pagination.getPage();
   }
 
 });
